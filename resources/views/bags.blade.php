@@ -42,23 +42,20 @@
     </div>
 </header>
 
-
 <div class="page-title">
     <h1>Bags</h1>
 </div>
-
 
 <div class="searchbar">
     <input type="text" id="searchInput" placeholder="Search Products">
     <button id="searchBtn">OK</button>
 </div>
 
-
 <div class="filter-container">
 
     <div class="filter">
-        <label for="racketbrands">Brand:</label>
-        <select id="racketbrands">
+        <label for="bagsbrands">Brand:</label>
+        <select id="bagsbrands" name="bagsbrands">
             <option value="all">All</option>
             <option value="bullpadel">Bullpadel</option>
             <option value="y1">Y1</option>
@@ -69,19 +66,19 @@
 
     <div class="filter">
         <label for="price">Price:</label>
-        <select id="price">
+        <select id="price" name="price">
             <option value="all">All</option>
             <option value="under50">Under £50</option>
-            <option value="50to75">£50–75</option>
-            <option value="75to100">£75–100</option>
-            <option value="100to150">£100–150</option>
+            <option value="50to75">£50-75</option>
+            <option value="75to100">£75-100</option>
+            <option value="100to150">£100-150</option>
             <option value="over150">£150+</option>
         </select>
     </div>
 
     <div class="filter">
         <label for="material">Material:</label>
-        <select id="material">
+        <select id="material" name="material">
             <option value="all">All</option>
             <option value="a">A</option>
             <option value="b">B</option>
@@ -92,9 +89,18 @@
 
 </div>
 
-
-<div class="products-container" id="productsContainer"></div>
-
+<div class="products-container" id="productsContainer">
+    @forelse($products as $product)
+        <div class="product-card">
+            <img src="{{ asset('products/bags/' . ($product->image_url ?: 'default-bag.jpg')) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <p>{{ $product->slug }}</p>
+            <p>£{{ number_format((float) $product->base_price, 2) }}</p>
+        </div>
+    @empty
+        <p>No bags found.</p>
+    @endforelse
+</div>
 
 <footer>
     <h5>@ ViboraUK Ltd</h5>
@@ -111,10 +117,6 @@
 
 @endsection
 
-
 @section('scripts')
-
 <script src="{{ asset('js/script1.js') }}"></script>
-<script src="{{ asset('js/bags.js') }}"></script>
-
 @endsection

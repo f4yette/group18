@@ -42,20 +42,16 @@
     </div>
 </header>
 
-
 <div class="page-title">
     <h1>Rackets</h1>
 </div>
-
 
 <div class="searchbar">
     <input type="text" id="searchInput" placeholder="Search Products">
     <button id="searchBtn">OK</button>
 </div>
 
-
 <div class="filter-container">
-
     <div class="filter">
         <label for="racketbrands">Brand:</label>
         <select name="racketbrands" id="racketbrands">
@@ -99,12 +95,20 @@
             <option value="d">D</option>
         </select>
     </div>
-
 </div>
 
-
-<div class="products-container" id="productsContainer"></div>
-
+<div class="products-container" id="productsContainer">
+    @forelse($products as $product)
+        <div class="product-card">
+            <img src="{{ asset('products/rackets/' . ($product->image_url ?: 'Arlo Padel Racket.jpg')) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <p>{{ $product->slug }}</p>
+            <p>£{{ number_format((float) $product->base_price, 2) }}</p>
+        </div>
+    @empty
+        <p>No rackets found.</p>
+    @endforelse
+</div>
 
 <footer>
     <h5>@ ViboraUK Ltd</h5>
@@ -121,10 +125,6 @@
 
 @endsection
 
-
 @section('scripts')
-
 <script src="{{ asset('js/script1.js') }}"></script>
-<script src="{{ asset('js/rackets.js') }}"></script>
-
 @endsection

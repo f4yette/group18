@@ -42,23 +42,20 @@
     </div>
 </header>
 
-
 <div class="page-title">
     <h1>Sportswear</h1>
 </div>
-
 
 <div class="searchbar">
     <input type="text" id="searchInput" placeholder="Search Products">
     <button id="searchBtn">OK</button>
 </div>
 
-
 <div class="filter-container">
 
     <div class="filter">
-        <label>Brand:</label>
-        <select id="racketbrands">
+        <label for="sportswearbrands">Brand:</label>
+        <select id="sportswearbrands" name="sportswearbrands">
             <option value="all">All</option>
             <option value="bullpadel">Bullpadel</option>
             <option value="y1">Y1</option>
@@ -68,8 +65,8 @@
     </div>
 
     <div class="filter">
-        <label>Price:</label>
-        <select id="price">
+        <label for="price">Price:</label>
+        <select id="price" name="price">
             <option value="all">All</option>
             <option value="under50">Under £50</option>
             <option value="50to75">£50-75</option>
@@ -80,8 +77,8 @@
     </div>
 
     <div class="filter">
-        <label>Gender:</label>
-        <select id="level">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
             <option value="all">All</option>
             <option value="male">M</option>
             <option value="female">F</option>
@@ -89,8 +86,8 @@
     </div>
 
     <div class="filter">
-        <label>Material:</label>
-        <select id="material">
+        <label for="material">Material:</label>
+        <select id="material" name="material">
             <option value="all">All</option>
             <option value="a">A</option>
             <option value="b">B</option>
@@ -101,9 +98,18 @@
 
 </div>
 
-
-<div class="products-container" id="productsContainer"></div>
-
+<div class="products-container" id="productsContainer">
+    @forelse($products as $product)
+        <div class="product-card">
+            <img src="{{ asset('products/sportswear/' . ($product->image_url ?: 'default-sportswear.jpg')) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <p>{{ $product->slug }}</p>
+            <p>£{{ number_format((float) $product->base_price, 2) }}</p>
+        </div>
+    @empty
+        <p>No sportswear found.</p>
+    @endforelse
+</div>
 
 <footer>
     <h5>@ ViboraUK Ltd</h5>
@@ -120,10 +126,6 @@
 
 @endsection
 
-
 @section('scripts')
-
 <script src="{{ asset('js/script1.js') }}"></script>
-<script src="{{ asset('js/sportswear.js') }}"></script>
-
 @endsection
