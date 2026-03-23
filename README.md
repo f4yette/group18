@@ -128,26 +128,17 @@ To access the platform for testing purposes, you can use the default seeded acco
 - `resources/css`: Styling files.
 - `resources/js`: Frontend JavaScript files.
 
-## Contributing
-
-1. Fork the repository.
-2. Create your feature branch:
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m 'Add some AmazingFeature'
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. Open a Pull Request.
 
 ## Group 18
 
 ### Members
-- Ahmed Ahned : 230176647
+- Ahmed Ahned: 230176647@aston.ac.uk
+- Joseba Bilbao Elguezabal: 240049599@aston.ac.uk
+- Macdonald Emeshieobi: 240223878@aston.ac.uk
+- Adam Mahmood: 240223270@aston.ac.uk
+- Anesh Nayyar: 230090468@aston.ac.uk
+- Ajay Sangha: 240186942@aston.ac.uk
+- Soyed Tanim: 240145581@aston.ac.uk
+- Adam Jama: 240173230@aston.ac.uk
 
 <sup><sub>This project was developed by Group 18 as part of an academic coursework project.</sub></sup>
