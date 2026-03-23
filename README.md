@@ -117,7 +117,7 @@ To access the platform for testing purposes, you can use the default seeded acco
 
 | Role | Email | Password |
 | :--- | :--- | :--- |
-| User | **test@example.com** | **password** |
+| User | **test@vibora.com** | **password** |
 
 ## Project Structure
 
