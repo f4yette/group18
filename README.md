@@ -1,59 +1,153 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" />
+  <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/tailwindcss-%2306B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 </p>
 
-## About Laravel
+# ViboraUK Sports E-Commerce Platform
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ViboraUK is a modern sports-focused e-commerce web application built with Laravel. It provides users with a smooth, responsive, and user-friendly online shopping experience for a range of sports products.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The aim of ViboraUK is to create a clean and intuitive e-commerce platform where users can browse sports products by category, explore items easily, and interact with a modern web interface. The project focuses on responsive design, structured backend development, and a scalable Laravel-based architecture.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **User Authentication**: Secure login and registration system.
+- **Product Catalogue**: Browse sports-related products by category.
+- **Category-Based Navigation**: Dedicated sections for Rackets, Sportswear, Shoes, Balls, and Bags.
+- **Responsive Design**: Fully responsive layout using Tailwind CSS.
+- **Modern UI**: Clean and user-friendly design for a better shopping experience.
+- **Laravel Framework**: Structured and maintainable backend built with Laravel.
+- **Vite Integration**: Fast frontend asset building and development workflow.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Product Categories
 
-## Laravel Sponsors
+The platform includes dedicated sections for:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Rackets**
+- **Sportswear**
+- **Shoes**
+- **Balls**
+- **Bags**
 
-### Premium Partners
+## Tech Stack
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Backend
+- Laravel 11
+- PHP 8.2+
+
+### Frontend
+- Blade Templates
+- Tailwind CSS 4
+- Vite 7
+- JavaScript
+- Axios
+
+### Development Tools
+- Composer
+- NPM
+- PHPUnit
+
+## Prerequisites
+
+- PHP 8.2 or higher
+- Composer
+- Node.js & NPM
+- MySQL or SQLite
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/f4yette/group18.git
+   cd group18
+   ```
+
+2. **Install PHP dependencies:**
+   ```bash
+   composer install
+   ```
+
+3. **Install Node dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Set up environment variables:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   Configure your database credentials in `.env`.
+
+5. **Run migrations and seed the database:**
+   ```bash
+   php artisan migrate --seed
+   ```
+
+6. **Build frontend assets:**
+   ```bash
+   npm run build
+   ```
+
+7. **Serve the application:**
+   ```bash
+   php artisan serve
+   ```
+
+## Development Commands
+
+Run the development environment:
+
+```bash
+composer run dev
+```
+
+Run tests:
+
+```bash
+composer run test
+```
+
+## Test User Credentials
+
+To access the platform for testing purposes, you can use the default seeded account:
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| User | **test@example.com** | **password** |
+
+## Project Structure
+
+- `app/Http/Controllers`: Contains the application logic.
+- `resources/views`: Blade templates for the user interface.
+- `routes/web.php`: Application routes.
+- `database/seeders`: Seeders for populating the database with initial data.
+- `resources/css`: Styling files.
+- `resources/js`: Frontend JavaScript files.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Fork the repository.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. Open a Pull Request.
 
-## Code of Conduct
+## Group 18
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Members
+- Ahmed Ahned : 230176647
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<sup><sub>This project was developed by Group 18 as part of an academic coursework project.</sub></sup>
